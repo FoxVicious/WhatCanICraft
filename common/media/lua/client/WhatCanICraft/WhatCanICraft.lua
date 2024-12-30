@@ -1,7 +1,7 @@
 WhatCanICraft = {}
 
 WhatCanICraft.showRecipes = function(item, playerIndex)
-    ISEntityUI.OpenHandcraftWindow(getSpecificPlayer(playerIndex), nil, '*')
+    ISEntityUI.OpenHandcraftWindow(getSpecificPlayer(playerIndex), nil)
 
     local player = ISEntityUI.players[playerIndex].instance
     local handCraftPanel = player.handCraftPanel
@@ -31,7 +31,7 @@ WhatCanICraft.onFillInventoryObjectContextMenu=function(playerIndex, table, item
         baseItem = baseItem.items[1]
     end
 
-    table:addOption("What Can I Craft?", baseItem, WhatCanICraft.showRecipes, playerIndex);
+    table:addOption(getText("ContextMenu_WhatCanICraft"), baseItem, WhatCanICraft.showRecipes, playerIndex);
 
 end
 
