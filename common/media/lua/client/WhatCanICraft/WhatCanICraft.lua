@@ -3,8 +3,7 @@ WhatCanICraft = {}
 WhatCanICraft.showRecipes = function(item, playerIndex)
     ISEntityUI.OpenHandcraftWindow(getSpecificPlayer(playerIndex), nil)
 
-    local player = ISEntityUI.players[playerIndex].instance
-    local handCraftPanel = player.handCraftPanel
+    local handCraftPanel = ISEntityUI.players[playerIndex].windows["HandcraftWindow"].instance.handCraftPanel
     local recipeFilterPanel = handCraftPanel.recipesPanel.recipeFilterPanel
     local recipeListPanel = handCraftPanel.recipesPanel.recipeListPanel.recipeListPanel
     local itemName = item:getScriptItem():getDisplayName()
